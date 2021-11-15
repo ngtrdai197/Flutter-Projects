@@ -77,7 +77,7 @@ class __MyHomePageState extends State<_MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
-    final isLanscape = mediaQuery.orientation == Orientation.landscape;
+    final isLandscape = mediaQuery.orientation == Orientation.landscape;
     final appBar = AppBar(
       title: Text('Home'),
     );
@@ -92,7 +92,7 @@ class __MyHomePageState extends State<_MyHomePage> {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    if (isLanscape)
+                    if (isLandscape)
                       Container(
                         height: (mediaQuery.size.height -
                                 appBar.preferredSize.height -
@@ -113,15 +113,15 @@ class __MyHomePageState extends State<_MyHomePage> {
                           ],
                         ),
                       ),
-                    if (isLanscape)
+                    if (isLandscape)
                       _showChart
-                          ? _chartWidget(appBar, isLanscape, mediaQuery)
-                          : _txtListWidget(appBar, isLanscape, mediaQuery)
+                          ? _chartWidget(appBar, isLandscape, mediaQuery)
+                          : _txtListWidget(appBar, isLandscape, mediaQuery)
                     else
                       Column(
                         children: [
-                          _chartWidget(appBar, isLanscape, mediaQuery),
-                          _txtListWidget(appBar, isLanscape, mediaQuery)
+                          _chartWidget(appBar, isLandscape, mediaQuery),
+                          _txtListWidget(appBar, isLandscape, mediaQuery)
                         ],
                       )
                   ],
