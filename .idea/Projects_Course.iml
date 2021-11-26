@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/shop/build" />
+      <excludeFolder url="file://$MODULE_DIR$/shop/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/shop/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/expense_planner/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/expense_planner/build" />
+      <excludeFolder url="file://$MODULE_DIR$/expense_planner/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_complete_guide/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_complete_guide/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_complete_guide/build" />
+      <excludeFolder url="file://$MODULE_DIR$/deli_meals/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/deli_meals/build" />
+      <excludeFolder url="file://$MODULE_DIR$/deli_meals/.pub" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Dart SDK" level="project" />
+    <orderEntry type="library" name="Dart Packages" level="project" />
+  </component>
+</module>
