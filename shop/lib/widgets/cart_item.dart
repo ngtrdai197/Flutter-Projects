@@ -87,7 +87,9 @@ class CartItem extends StatelessWidget {
                 children: <Widget>[
                   IconButton(
                     icon: Icon(Icons.remove),
-                    onPressed: () => decrement,
+                    onPressed: () {
+                      decrement();
+                    },
                   ),
                   Text(
                     '$quantity',
@@ -95,7 +97,9 @@ class CartItem extends StatelessWidget {
                   ),
                   IconButton(
                     icon: Icon(Icons.add),
-                    onPressed: () => increment,
+                    onPressed: () {
+                      increment();
+                    },
                   ),
                 ],
               ),

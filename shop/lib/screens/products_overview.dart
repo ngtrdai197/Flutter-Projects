@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:shop/constants/routing.dart';
 import 'package:shop/providers/cart.dart';
 import 'package:shop/screens/products_grid.dart';
+import 'package:shop/widgets/app_drawer.dart';
 import 'package:shop/widgets/badge.dart';
 
 enum FilterOptions {
@@ -65,6 +66,7 @@ class _ProductOverviewState extends State<ProductOverview> {
           ),
         ],
       ),
+      drawer: AppDrawer(),
       body: ProductsGrid(_showOnlyFavorites),
     );
   }

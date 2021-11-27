@@ -49,4 +49,12 @@ class ProductsProvider with ChangeNotifier {
 
   Product findById(String id) =>
       _items.firstWhere((element) => element.id == id);
+
+  void updateProduct(Product product) {
+    final index = _items.indexWhere((element) => element.id == product.id);
+    if (index >= 0) {
+      _items[index] = product;
+      notifyListeners();
+    }
+  }
 }

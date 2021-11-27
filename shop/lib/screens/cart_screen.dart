@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop/providers/cart.dart';
+import 'package:shop/providers/orders.dart';
 import 'package:shop/widgets/cart_item.dart';
 
 class CartScreen extends StatefulWidget {
@@ -11,6 +12,18 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
+  void _decrement(CartProvider cart, int index, BuildContext context) {
+    cart.decreaseQuantity(cart.items.keys.toList()[index], context);
+  }
+
+  void _increment(CartProvider cart, int index) {
+    cart.increaseQuantity(cart.items.keys.toList()[index]);
+  }
+
+  void _deleteItem(CartProvider cart, int index) {
+    cart.removeItem(cart.items.keys.toList()[index]);
+  }
+
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<CartProvider>(context);
@@ -42,7 +55,17 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                     backgroundColor: Theme.of(context).primaryColor,
                   ),
-                  TextButton(onPressed: () {}, child: Text('Order Now')),
+                  TextButton(
+                    onPressed: () {
+                      Provider.of<OrderProvider>(context, listen: false)
+                          .addOrder(
+                        cart.items.values.toList(),
+                        cart.totalAmount,
+                      );
+                      cart.clear();
+                    },
+                    child: Text('Order Now'),
+                  ),
                 ],
               ),
             ),
@@ -59,15 +82,9 @@ class _CartScreenState extends State<CartScreen> {
                 price: cart.items.values.toList()[i].price,
                 quantity: cart.items.values.toList()[i].quantity,
                 title: cart.items.values.toList()[i].title,
-                decrement: () {
-                  cart.decreaseQuantity(cart.items.keys.toList()[i]);
-                },
-                increment: () {
-                  cart.increaseQuantity(cart.items.keys.toList()[i]);
-                },
-                deleteItem: () {
-                  cart.removeItem(cart.items.keys.toList()[i]);
-                },
+                decrement: () => _decrement(cart, i, context),
+                increment: () => _increment(cart, i),
+                deleteItem: () => _deleteItem(cart, i),
               ),
             ),
           )
